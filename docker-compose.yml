@@ -1,0 +1,20 @@
+version: '3'
+services:
+  web:
+    build: .
+    ports:
+    - 3000:3000
+    environment:
+      PORT: 27017
+      MONGO_DB_URI: 'mongodb://mymongo:27017/mydb'
+      DB_NAME: 'mydb'
+      MONGO_INITDB_DATABASE : 'mydb'
+    depends_on:
+      - mymongo
+
+  database:
+    image: mongo
+    container_name: mymongo
+
+
+
