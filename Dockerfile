@@ -1,6 +1,6 @@
 FROM python:3.6.1
 # update pip to minimize dependency errors
-RUN pip install --upgrade pip
+RUN pip3 install --upgrade pip3
 # define the present working directory
 WORKDIR /myflaskappdir
 # copy the contents into the working dir
